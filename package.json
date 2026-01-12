@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "cleancss -o style.min.css style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phynann8/Portfolio_web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Phynann8/Portfolio_web/issues"
+  },
+  "homepage": "https://github.com/Phynann8/Portfolio_web#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3"
+  }
+}
