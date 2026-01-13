@@ -5,7 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "cleancss -o style.min.css style.css"
+    "build:css": "cleancss -o style.min.css style.css",
+    "build:js": "uglifyjs script.js -o script.min.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/Phynann8/Portfolio_web#readme",
   "devDependencies": {
-    "clean-css-cli": "^5.6.3"
+    "clean-css-cli": "^5.6.3",
+    "uglify-js": "^3.19.3"
   }
 }
