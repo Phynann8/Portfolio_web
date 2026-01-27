@@ -1,5 +1,3 @@
-# Dependencies
 node_modules/
-
-# Generated files
+script.min.js
 style.min.css
