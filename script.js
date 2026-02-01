@@ -1,3 +1,8 @@
+/**
+ * Personal Portfolio Script
+ * Handles dynamic content like current year and contact form validation.
+ */
+
 // 1. Select the element where we want to put the year
 const yearSpan = document.getElementById('year');
 

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Developer Note: This site uses a minified CSS file for performance. -->
-    <!-- To make style changes, edit `style.css` and then run `npm run build:css` to regenerate `style.min.css`. -->
+    <!-- Developer Note: This site uses minified CSS and JS files for performance. -->
+    <!-- To make changes, edit `style.css` or `script.js` and then run `npm run build` to regenerate minified assets. -->
     <link rel="stylesheet" href="style.min.css">
+    <!-- Performance Optimization: Minified JS loaded with 'defer' to prevent render blocking and start fetching early -->
+    <script src="script.min.js" defer></script>
 </head>
 <body>
     <nav>
@@ -58,12 +60,6 @@
                 </div>
 
         </div>
-
-        <!-- <ul>
-            <li><strong>Project A:</strong> Description of project A.</li>
-            <li><strong>Project B:</strong> Description of project B.</li>
-            <li><strong>Project C:</strong> Description of project C.</li>
-        </ul> -->
     </section>
     <section id="experience">
         <h2>Experience</h2>
@@ -99,11 +95,11 @@
     <footer>
     <p>&copy; <span id="year"></span> Chhun Phynann. All rights reserved.</p>
     <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        <!-- Performance & Security Optimization: rel="noopener" for external links -->
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
     </div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
