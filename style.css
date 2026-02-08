@@ -12,7 +12,9 @@
     --border-color: rgba(0,0,0,0.05);
     --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
-
+.about-content{
+    text-align: center;
+}
 /* Dark Mode Variables */
 body.dark-mode {
     --bg-color: #1a1a2e;
