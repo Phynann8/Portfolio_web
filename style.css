@@ -295,14 +295,22 @@ section h2::after {
 
 .project-card .links a {
     text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-right: 15px;
-    transition: color 0.2s;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 .project-card .links a:hover {
-    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    opacity: 0.9;
 }
 
 /* Experience Timeline */
