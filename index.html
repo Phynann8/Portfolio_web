@@ -3,106 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- Developer Note: This site uses a minified CSS file for performance. -->
-    <!-- To make style changes, edit `style.css` and then run `npm run build:css` to regenerate `style.min.css`. -->
-    <link rel="stylesheet" href="style.min.css">
+    <title>Chhun Phynann | Portfolio</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Devicon for Skills -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="background-mesh"></div>
+    
     <nav>
-        <ul>
+        <div class="logo">CP</div>
+        <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="Resume/resume.pdf">Resume</a></li>
         </ul>
+        <a href="Resume/resume.pdf" class="btn-resume">Resume</a>
     </nav>
+
     <section id="hero">
-        <h1>Hi, I'm CHHUN PHYNANN</h1>
-        <p>Computer Science Student | Software Developer | Freelancer</p>
+        <div class="hero-content">
+            <p class="greeting">Hello, I'm</p>
+            <h1>CHHUN PHYNANN</h1>
+            <h2 class="role">I am a <span id="typing-text"></span><span class="cursor">|</span></h2>
+            <p class="bio">Building scalable systems and solving complex problems with code.</p>
+            <div class="social-hero">
+                <a href="https://github.com/yourusername" target="_blank"><i class="devicon-github-original"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+            </div>
+        </div>
     </section>
-    <section id="about">
+
+    <section id="about" class="hidden">
         <h2>About Me</h2>
-        <p>I am a passionate computer science student with experience in software development and freelancing. I enjoy creating efficient and innovative solutions to complex problems.</p>
+        <div class="card glass">
+            <p>I am a passionate Computer Science student with a strong foundation in software engineering. I specialize in building robust backend systems and intuitive user interfaces. My journey involves constant learning and applying modern technologies to real-world problems.</p>
+        </div>
     </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming Languages: Python, Java, C++</li>
-            <li>Web Development: HTML, CSS, JavaScript</li>
-            <li>Database Management: SQL, MongoDB</li>
-            <li>Version Control: Git, GitHub</li>
-        </ul>
+
+    <section id="skills" class="hidden">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card glass">
+                <i class="devicon-python-plain colored"></i>
+                <span>Python</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-java-plain colored"></i>
+                <span>Java</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-cplusplus-plain colored"></i>
+                <span>C++</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-html5-plain colored"></i>
+                <span>HTML5</span>
+            </div>
+             <div class="skill-card glass">
+                <i class="devicon-css3-plain colored"></i>
+                <span>CSS3</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-javascript-plain colored"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-mysql-plain colored"></i>
+                <span>MySQL</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-mongodb-plain colored"></i>
+                <span>MongoDB</span>
+            </div>
+            <div class="skill-card glass">
+                <i class="devicon-git-plain colored"></i>
+                <span>Git</span>
+            </div>
+             <div class="skill-card glass">
+                <i class="devicon-docker-plain colored"></i>
+                <span>Docker</span>
+            </div>
+             <div class="skill-card glass">
+                <i class="devicon-dotnetcore-plain colored"></i>
+                <span>.NET</span>
+            </div>
+        </div>
     </section>
-    <section id="projects">
-        <h2>Projects</h2>
+
+    <section id="projects" class="hidden">
+        <h2>Featured Projects</h2>
         <div class="project-grid">
-            <div class="project-card">
-                <h3>Personal Portfolio</h3>
-                <p>A responsive personal website built from scratch to showcase my skills and experience.</p>
-                <p><strong>Tech Stack</strong>HTML, CSS, JavaScript</p>
-                <div class="links">
-                    <a href="#">View Code</a>
-                    <a href="#">Live Demo</a>
+            <!-- CRM System -->
+            <div class="project-card glass">
+                <div class="project-info">
+                    <h3>CRM System</h3>
+                    <p>A comprehensive Customer Relationship Management system designed for educational institutions. Features include database normalization tools, Docker containerization for easy deployment, and a modular PHP architecture.</p>
+                    <div class="tech-tags">
+                        <span>PHP</span>
+                        <span>Docker</span>
+                        <span>MySQL</span>
+                        <span>Python Scripts</span>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn-small">View Code</a>
+                    </div>
                 </div>
             </div>
-            <div class="project-card">
-                <h3>Task Manager App</h3>
-                <p>A web application that helps users manage their tasks efficiently with features like deadlines and reminders.</p>
-                <p><strong>Tech Stack</strong>Python, Flask, SQLite</p>
-                <div class="links">
-                    <a href="#">View Code</a>
-                    <a href="#">Live Demo</a>
+
+            <!-- Inventory System -->
+            <div class="project-card glass">
+                <div class="project-info">
+                    <h3>Inventory Management System</h3>
+                    <p>A robust desktop application built with .NET following the MVVM architectural pattern. Manages stock levels, tracks item movements, and provides real-time data visualization for inventory control.</p>
+                    <div class="tech-tags">
+                        <span>C#</span>
+                        <span>.NET</span>
+                        <span>MVVM</span>
+                        <span>SQL Server</span>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn-small">View Code</a>
+                    </div>
                 </div>
+            </div>
 
+            <!-- Portfolio -->
+            <div class="project-card glass">
+                <div class="project-info">
+                    <h3>Personal Portfolio</h3>
+                    <p>This high-performance, responsive portfolio website. Built with vanilla HTML/CSS/JS using Glassmorphism design principles and modern CSS animations.</p>
+                    <div class="tech-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn-small">View Code</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- <ul>
-            <li><strong>Project A:</strong> Description of project A.</li>
-            <li><strong>Project B:</strong> Description of project B.</li>
-            <li><strong>Project C:</strong> Description of project C.</li>
-        </ul> -->
     </section>
-    <section id="experience">
+
+    <section id="experience" class="hidden">
         <h2>Experience</h2>
-        <ul>
-            <li><strong>Internship at Company X:</strong> Description of internship experience.</li>
-            <li><strong>Freelance Developer:</strong> Description of freelance projects.</li>
-        </ul>
+        <div class="timeline glass">
+            <div class="timeline-item">
+                <h3>Freelance Developer</h3>
+                <span class="date">Present</span>
+                <p>Delivering custom web solutions and automation scripts for diverse clients. Focusing on clean code and maintainable architectures.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Computer Science Student</h3>
+                <span class="date">2020 - Present</span>
+                <p>Deepening knowledge in algorithms, data structures, and system design. Actively building personal projects to apply theoretical concepts.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-card">
-            <p>"Working with [Your Name] was a fantastic experience. Their attention to detail and commitment to quality are second to none. I would highly recommend them for any web development project."</p>
-            <h4>- Jane Doe, CEO of ExampleCorp</h4>
+    <section id="contact" class="hidden">
+        <h2>Get In Touch</h2>
+        <div class="contact-container glass">
+            <div class="contact-info">
+                <p>Interested in working together or have a question? Feel free to reach out.</p>
+                <div class="contact-method">
+                    <i class="devicon-google-plain"></i>
+                    <span>phynann.chhun@gmail.com</span>
+                </div>
+                <div class="contact-method">
+                    <span>📞 +855 12 345 678</span>
+                </div>
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
         </div>
-        <div class="testimonial-card">
-            <p>"I was impressed by how quickly [Your Name] understood our requirements and delivered a solution that exceeded our expectations. Their technical skills and professionalism are top-notch."</p>
-            <h4>- John Smith, Project Manager at Tech Solutions</h4>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: phynann.chhun@gmail.com</p>
-        <p>Phone: +855 12 345 678</p>
-        <form id="contact-form">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
     </section>
 
     <footer>
-    <p>&copy; <span id="year"></span> Chhun Phynann. All rights reserved.</p>
-    <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-</footer>
+        <p>&copy; <span id="year"></span> Chhun Phynann. Built with ❤️ and Coffee.</p>
+    </footer>
 </body>
 </html>
