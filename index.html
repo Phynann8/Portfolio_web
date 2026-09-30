@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chhun Phynann | IT Support &amp; Network Administrator</title>
     <meta name="description" content="Chhun Phynann: IT support and network/systems administrator in Phnom Penh with 4 years of experience (MikroTik, VLANs, Active Directory, Ubuntu Server) and a growing software development background.">
+    <link rel="canonical" href="https://portfolio-web.phynann8.workers.dev/">
+    <meta property="og:url" content="https://portfolio-web.phynann8.workers.dev/">
+    <meta property="og:image" content="https://portfolio-web.phynann8.workers.dev/photo.webp">
     <meta name="theme-color" content="#5b4bd6">
     <meta name="color-scheme" content="light dark">
     <meta property="og:type" content="website">
@@ -48,7 +51,7 @@
             <h1>CHHUN PHYNANN</h1>
             <h2 class="role">I am an <span id="typing-text">IT Support Specialist</span><span class="cursor" aria-hidden="true">|</span></h2>
             <p class="bio">IT support, network &amp; systems administration and business-process automation in Phnom Penh, Cambodia.</p>
-            <div class="hero-actions"><a href="#contact" class="btn-submit">Get in touch</a><a href="Resume/resume.pdf" class="btn-outline" download>Download CV</a></div>
+            <div class="hero-actions"><a href="#contact" class="btn-submit">Get in touch</a><button type="button" id="cv-view" class="btn-outline">View CV</button><a href="Resume/resume.pdf" class="btn-outline" download>Download CV</a></div>
             <div class="social-hero">
                 <a href="https://github.com/Phynann8" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="devicon-github-original" aria-hidden="true"></i></a>
                 <a href="https://www.linkedin.com/in/phynann-chhun-22073939a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="devicon-linkedin-plain" aria-hidden="true"></i></a>
@@ -129,8 +132,16 @@
     </section>
     </main>
 
+    <dialog id="cv-dialog" aria-label="CV preview">
+        <div class="cv-bar">
+            <strong>Chhun Phynann: CV</strong>
+            <span><a href="Resume/resume.pdf" target="_blank" rel="noopener">Open in new tab</a> <a href="Resume/resume.pdf" download>Download</a> <button type="button" id="cv-close" aria-label="Close preview">✕</button></span>
+        </div>
+        <iframe id="cv-frame" title="CV preview" data-src="Resume/resume.pdf"></iframe>
+    </dialog>
+
     <footer>
-        <p>&copy; <span id="year">2026</span> Chhun Phynann.</p>
+        <p>&copy; <span id="year">2026</span> Chhun Phynann. Built with ❤️ and Coffee.</p>
     </footer>
 </body>
 </html>

@@ -1,0 +1,3 @@
+## 2026-02-12 - Asset Synchronization and CRP Optimization
+**Learning:** Static analysis of HTML/CSS can be misleading if minified assets are out of sync with source files. I found that `style.min.css` was missing styles for newer sections (testimonials, contact) even though they were present in `style.css`. Additionally, moving scripts to the `<head>` with `defer` is more efficient than end-of-body placement as it enables earlier parallel fetching.
+**Action:** Always verify that production artifacts match current source code before optimizing. Use `defer` on non-critical scripts to unblock the Critical Rendering Path while maximizing fetch priority.

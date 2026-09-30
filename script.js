@@ -59,7 +59,21 @@
         try { localStorage.setItem('theme', t); } catch (e) {}
     });
 
-    // 6. Contact form: opens the visitor's mail client with the message prefilled
+    // 6. CV preview (dialog on desktop, new tab on small screens)
+    const dlg = document.getElementById('cv-dialog');
+    const frame = document.getElementById('cv-frame');
+    document.getElementById('cv-view').addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 768px)').matches || typeof dlg.showModal !== 'function') {
+            window.open('Resume/resume.pdf', '_blank', 'noopener');
+            return;
+        }
+        if (!frame.getAttribute('src')) frame.src = frame.dataset.src;
+        dlg.showModal();
+    });
+    document.getElementById('cv-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+    // 7. Contact form: opens the visitor's mail client with the message prefilled
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
     form.addEventListener('submit', e => {
