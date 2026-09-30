@@ -62,14 +62,15 @@
     // 6. CV preview (dialog on desktop, new tab on small screens)
     const dlg = document.getElementById('cv-dialog');
     const frame = document.getElementById('cv-frame');
-    document.getElementById('cv-view').addEventListener('click', () => {
+    const openCv = () => {
         if (window.matchMedia('(max-width: 768px)').matches || typeof dlg.showModal !== 'function') {
             window.open('Resume/resume.pdf', '_blank', 'noopener');
             return;
         }
         if (!frame.getAttribute('src')) frame.src = frame.dataset.src;
         dlg.showModal();
-    });
+    };
+    document.querySelectorAll('.cv-open').forEach(b => b.addEventListener('click', openCv));
     document.getElementById('cv-close').addEventListener('click', () => dlg.close());
     dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 
