@@ -1,0 +1,11 @@
+# Files that should NOT be publicly served
+wrangler.jsonc
+.assetsignore
+package.json
+package-lock.json
+README.md
+.gitignore
+.jules
+node_modules
+.git
+style.css
