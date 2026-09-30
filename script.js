@@ -9,7 +9,7 @@
 
     // 2. Typing effect (skipped for reduced-motion users; static text stays in the HTML)
     const typingText = document.getElementById('typing-text');
-    const roles = ['Software Developer', 'Computer Science Student', 'Freelancer', 'Backend Engineer'];
+    const roles = ['IT Support Specialist', 'Network & Systems Administrator', 'Computer Science Student', 'Automation Developer'];
     let roleIndex = 0, charIndex = roles[0].length, isDeleting = true;
 
     function typeEffect() {

@@ -1,6 +1,6 @@
 # Portfolio_web
 
-Personal portfolio for Chhun Phynann. Static HTML/CSS/vanilla JS with a glassmorphism design; no framework, no runtime dependencies.
+Personal portfolio for Chhun Phynann (IT support & network administration). Static HTML/CSS/vanilla JS with a glassmorphism design; no framework, no runtime dependencies.
 
 ## Develop
 ```bash
@@ -19,5 +19,8 @@ npm run build       # regenerate style.min.css from style.css (commit the result
 GitHub Pages or Vercel: publish the repo root.
 
 ## TODO
-- Add your LinkedIn URL (hero + contact section) and "View Code" links for the CRM and Inventory projects (marked TODO in `index.html`).
 - Optional: set `FORM_ENDPOINT` in `script.js` (e.g. a Formspree URL) so the contact form sends without opening a mail app.
+
+## Deploy on Cloudflare (Workers static assets)
+`wrangler.jsonc` serves the repo root; `.assetsignore` keeps config/dev files private.
+Dashboard settings: build command empty, deploy command `npx wrangler deploy`, project name `portfolio-web`.
