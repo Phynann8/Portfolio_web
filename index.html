@@ -3,160 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chhun Phynann | Portfolio</title>
-    
-    <!-- Google Fonts: Poppins -->
+    <title>Chhun Phynann | Software Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Chhun Phynann, a Computer Science student, software developer and freelancer building backend systems and web apps.">
+    <meta name="theme-color" content="#5b4bd6">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chhun Phynann | Software Developer">
+    <meta property="og:description" content="Building scalable systems and solving complex problems with code.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236c5ce7'/%3E%3Ctext x='50' y='66' font-size='46' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3ECP%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Devicon for Skills -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <link rel="stylesheet" href="style.min.css">
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){}</script>
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="background-mesh"></div>
-    
-    <nav>
-        <div class="logo">CP</div>
-        <ul class="nav-links">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="background-mesh" aria-hidden="true"></div>
+
+    <nav aria-label="Main">
+        <a href="#hero" class="logo" aria-label="Home">CP</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu"><span></span></button>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="Resume/resume.pdf" class="btn-resume">Resume</a>
+        <button class="theme-toggle" aria-label="Switch color theme">🌙</button>
+        <a href="Resume/resume.pdf" class="btn-resume" download>Resume</a>
     </nav>
 
+    <main id="main">
     <section id="hero">
         <div class="hero-content">
             <p class="greeting">Hello, I'm</p>
             <h1>CHHUN PHYNANN</h1>
-            <h2 class="role">I am a <span id="typing-text"></span><span class="cursor">|</span></h2>
+            <h2 class="role">I am a <span id="typing-text">Software Developer</span><span class="cursor" aria-hidden="true">|</span></h2>
             <p class="bio">Building scalable systems and solving complex problems with code.</p>
             <div class="social-hero">
-                <a href="https://github.com/yourusername" target="_blank"><i class="devicon-github-original"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+                <a href="https://github.com/Phynann8" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="devicon-github-original" aria-hidden="true"></i></a>
+                <a href="mailto:phynann8@gmail.com" aria-label="Send an email"><i class="devicon-google-plain" aria-hidden="true"></i></a>
+                <!-- TODO: add your real LinkedIn URL here:
+                <a href="https://linkedin.com/in/..." target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="devicon-linkedin-plain" aria-hidden="true"></i></a> -->
             </div>
         </div>
     </section>
 
-    <section id="about" class="hidden">
+    <section id="about" class="reveal">
         <h2>About Me</h2>
         <div class="card glass">
             <p>I am a passionate Computer Science student with a strong foundation in software engineering. I specialize in building robust backend systems and intuitive user interfaces. My journey involves constant learning and applying modern technologies to real-world problems.</p>
         </div>
     </section>
 
-    <section id="skills" class="hidden">
+    <section id="skills" class="reveal">
         <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card glass">
-                <i class="devicon-python-plain colored"></i>
-                <span>Python</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-java-plain colored"></i>
-                <span>Java</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-cplusplus-plain colored"></i>
-                <span>C++</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-html5-plain colored"></i>
-                <span>HTML5</span>
-            </div>
-             <div class="skill-card glass">
-                <i class="devicon-css3-plain colored"></i>
-                <span>CSS3</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-javascript-plain colored"></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-mysql-plain colored"></i>
-                <span>MySQL</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-mongodb-plain colored"></i>
-                <span>MongoDB</span>
-            </div>
-            <div class="skill-card glass">
-                <i class="devicon-git-plain colored"></i>
-                <span>Git</span>
-            </div>
-             <div class="skill-card glass">
-                <i class="devicon-docker-plain colored"></i>
-                <span>Docker</span>
-            </div>
-             <div class="skill-card glass">
-                <i class="devicon-dotnetcore-plain colored"></i>
-                <span>.NET</span>
-            </div>
-        </div>
+        <ul class="skills-grid">
+            <li class="skill-card glass"><i class="devicon-python-plain colored" aria-hidden="true"></i><span>Python</span></li>
+            <li class="skill-card glass"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></li>
+            <li class="skill-card glass"><i class="devicon-cplusplus-plain colored" aria-hidden="true"></i><span>C++</span></li>
+            <li class="skill-card glass"><i class="devicon-csharp-plain colored" aria-hidden="true"></i><span>C#</span></li>
+            <li class="skill-card glass"><i class="devicon-dotnetcore-plain colored" aria-hidden="true"></i><span>.NET</span></li>
+            <li class="skill-card glass"><i class="devicon-php-plain colored" aria-hidden="true"></i><span>PHP</span></li>
+            <li class="skill-card glass"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></li>
+            <li class="skill-card glass"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS3</span></li>
+            <li class="skill-card glass"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></li>
+            <li class="skill-card glass"><i class="devicon-mysql-plain colored" aria-hidden="true"></i><span>MySQL</span></li>
+            <li class="skill-card glass"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span>MongoDB</span></li>
+            <li class="skill-card glass"><i class="devicon-git-plain colored" aria-hidden="true"></i><span>Git</span></li>
+            <li class="skill-card glass"><i class="devicon-docker-plain colored" aria-hidden="true"></i><span>Docker</span></li>
+        </ul>
     </section>
 
-    <section id="projects" class="hidden">
+    <section id="projects" class="reveal">
         <h2>Featured Projects</h2>
         <div class="project-grid">
-            <!-- CRM System -->
-            <div class="project-card glass">
-                <div class="project-info">
+            <article class="project-card glass">
+                <div>
                     <h3>CRM System</h3>
                     <p>A comprehensive Customer Relationship Management system designed for educational institutions. Features include database normalization tools, Docker containerization for easy deployment, and a modular PHP architecture.</p>
-                    <div class="tech-tags">
-                        <span>PHP</span>
-                        <span>Docker</span>
-                        <span>MySQL</span>
-                        <span>Python Scripts</span>
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn-small">View Code</a>
-                    </div>
+                    <ul class="tech-tags"><li>PHP</li><li>Docker</li><li>MySQL</li><li>Python Scripts</li></ul>
                 </div>
-            </div>
-
-            <!-- Inventory System -->
-            <div class="project-card glass">
-                <div class="project-info">
+                <!-- TODO: replace with the repo URL: <a href="https://github.com/Phynann8/..." class="btn-small">View Code</a> -->
+            </article>
+            <article class="project-card glass">
+                <div>
                     <h3>Inventory Management System</h3>
                     <p>A robust desktop application built with .NET following the MVVM architectural pattern. Manages stock levels, tracks item movements, and provides real-time data visualization for inventory control.</p>
-                    <div class="tech-tags">
-                        <span>C#</span>
-                        <span>.NET</span>
-                        <span>MVVM</span>
-                        <span>SQL Server</span>
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn-small">View Code</a>
-                    </div>
+                    <ul class="tech-tags"><li>C#</li><li>.NET</li><li>MVVM</li><li>SQL Server</li></ul>
                 </div>
-            </div>
-
-            <!-- Portfolio -->
-            <div class="project-card glass">
-                <div class="project-info">
+                <!-- TODO: replace with the repo URL: <a href="https://github.com/Phynann8/..." class="btn-small">View Code</a> -->
+            </article>
+            <article class="project-card glass">
+                <div>
                     <h3>Personal Portfolio</h3>
                     <p>This high-performance, responsive portfolio website. Built with vanilla HTML/CSS/JS using Glassmorphism design principles and modern CSS animations.</p>
-                    <div class="tech-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn-small">View Code</a>
-                    </div>
+                    <ul class="tech-tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
                 </div>
-            </div>
+                <a href="https://github.com/Phynann8/Portfolio_web" target="_blank" rel="noopener noreferrer" class="btn-small">View Code</a>
+            </article>
         </div>
     </section>
 
-    <section id="experience" class="hidden">
+    <section id="experience" class="reveal">
         <h2>Experience</h2>
         <div class="timeline glass">
             <div class="timeline-item">
@@ -172,39 +126,43 @@
         </div>
     </section>
 
-    <section id="contact" class="hidden">
+    <section id="contact" class="reveal">
         <h2>Get In Touch</h2>
         <div class="contact-container glass">
             <div class="contact-info">
                 <p>Interested in working together or have a question? Feel free to reach out.</p>
                 <div class="contact-method">
-                    <i class="devicon-google-plain"></i>
-                    <span>phynann.chhun@gmail.com</span>
+                    <i class="devicon-google-plain" aria-hidden="true"></i>
+                    <a href="mailto:phynann8@gmail.com">phynann8@gmail.com</a>
                 </div>
                 <div class="contact-method">
-                    <span>📞 +855 12 345 678</span>
+                    <span aria-hidden="true">📞</span>
+                    <a href="tel:+85578553492">+855 78 553 492</a>
                 </div>
+                <!-- TODO: add your LinkedIn / Telegram links here if you want them -->
             </div>
             <form id="contact-form">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
                     <label for="name">Your Name</label>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
                     <label for="email">Your Email</label>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" placeholder=" " required></textarea>
                     <label for="message">Your Message</label>
                 </div>
                 <button type="submit" class="btn-submit">Send Message</button>
+                <p id="form-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>
+    </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Chhun Phynann. Built with ❤️ and Coffee.</p>
+        <p>&copy; <span id="year">2026</span> Chhun Phynann. Built with ❤️ and Coffee.</p>
     </footer>
 </body>
 </html>

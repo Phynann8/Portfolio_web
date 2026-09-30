@@ -1,18 +1,19 @@
 {
-  "name": "app",
+  "name": "portfolio-web",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal portfolio of Chhun Phynann (static HTML/CSS/JS)",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "cleancss -o style.min.css style.css"
+    "build:css": "cleancss -o style.min.css style.css",
+    "build": "npm run build:css",
+    "start": "npx --yes serve ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Phynann8/Portfolio_web.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chhun Phynann",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {

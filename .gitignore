@@ -1,5 +1,5 @@
 # Dependencies
 node_modules/
 
-# Generated files
-style.min.css
+# Note: style.min.css is committed because the site is served statically.
+# Run "npm run build" after editing style.css.

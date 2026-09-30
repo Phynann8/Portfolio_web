@@ -1,79 +1,80 @@
-// 1. Copyright Year
-const yearSpan = document.getElementById('year');
-const currentYear = new Date().getFullYear();
-yearSpan.textContent = currentYear;
+(() => {
+    'use strict';
+    // Optional: paste a Formspree URL (https://formspree.io/f/xxxx) to receive messages by email without opening a mail app.
+    const FORM_ENDPOINT = '';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// 2. Typing Effect
-const typingText = document.getElementById('typing-text');
-const roles = ["Software Developer", "Computer Science Student", "Freelancer", "Backend Engineer"];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 100;
+    // 1. Copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-function typeEffect() {
-    const currentRole = roles[roleIndex];
+    // 2. Typing effect (skipped for reduced-motion users; static text stays in the HTML)
+    const typingText = document.getElementById('typing-text');
+    const roles = ['Software Developer', 'Computer Science Student', 'Freelancer', 'Backend Engineer'];
+    let roleIndex = 0, charIndex = roles[0].length, isDeleting = true;
 
-    if (isDeleting) {
-        typingText.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50; // Faster deletion
-    } else {
-        typingText.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100; // Normal typing speed
+    function typeEffect() {
+        const role = roles[roleIndex];
+        charIndex += isDeleting ? -1 : 1;
+        typingText.textContent = role.slice(0, charIndex);
+        let delay = isDeleting ? 50 : 100;
+        if (!isDeleting && charIndex === role.length) { isDeleting = true; delay = 2000; }
+        else if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; delay = 500; }
+        setTimeout(typeEffect, delay);
     }
+    if (!reduceMotion) setTimeout(typeEffect, 2000);
 
-    if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        typeSpeed = 2000; // Pause at end of word
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typeSpeed = 500; // Pause before new word
-    }
+    // 3. Scroll reveal + active nav link
+    const links = document.querySelectorAll('.nav-links a');
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    setTimeout(typeEffect, typeSpeed);
-}
+    const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+            }
+        });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(s => navObserver.observe(s));
 
-// Start the typing effect when page loads
-document.addEventListener('DOMContentLoaded', typeEffect);
+    // 4. Mobile menu
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-links');
+    const setMenu = open => { menu.classList.toggle('open', open); toggle.setAttribute('aria-expanded', open); };
+    toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+    links.forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-// 3. Scroll Animations (Intersection Observer)
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            entry.target.classList.remove('hidden'); // Optional: keep it clean
-            observer.unobserve(entry.target); // Only animate once
-        }
+    // 5. Theme toggle
+    const themeBtn = document.querySelector('.theme-toggle');
+    const applyTheme = t => { document.documentElement.dataset.theme = t; themeBtn.textContent = t === 'dark' ? '☀️' : '🌙'; };
+    applyTheme(document.documentElement.dataset.theme || 'light');
+    themeBtn.addEventListener('click', () => {
+        const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(t);
+        try { localStorage.setItem('theme', t); } catch (e) {}
     });
-}, observerOptions);
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
-
-
-// 4. Contact Form Validation (Simple)
-const contactForm = document.getElementById("contact-form");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        // Basic Client-side Validation
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-
-        if (name && email) {
-            alert(`Thanks ${name}! This is a demo form, but I'd love to hear from you at phynann.chhun@gmail.com`);
-            contactForm.reset();
+    // 6. Contact form: opens the visitor's mail client with the message prefilled
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const { name, email, message } = Object.fromEntries(new FormData(form));
+        if (FORM_ENDPOINT) {
+            fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+                .then(r => { if (!r.ok) throw new Error(); status.textContent = 'Thanks! Your message was sent.'; form.reset(); })
+                .catch(() => { status.textContent = 'Sorry, something went wrong. Please email me directly.'; });
+            return;
         }
+        const subject = encodeURIComponent(`Portfolio message from ${name.trim()}`);
+        const body = encodeURIComponent(`${message.trim()}\n\n— ${name.trim()} (${email.trim()})`);
+        window.location.href = `mailto:phynann8@gmail.com?subject=${subject}&body=${body}`;
+        status.textContent = 'Opening your email app… if nothing happens, email me directly at the address above.';
+        form.reset();
     });
-}
+})();
